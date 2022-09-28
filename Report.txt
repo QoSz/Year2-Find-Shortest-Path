@@ -1,0 +1,42 @@
+Student Number: 2078614
+Student Name: Yash Shah
+
+The BFS(Breadth-First Search) algorithm was used to traverse the roadmap graph.
+
+Using the BFS algorithm, a HashSet(visited) and a Queue(adjacent) are initialised. The HashSet is used to
+ store all the vertices that have been visited; therefore, those vertices do not need to be revisited. The
+ Queue is used to keep track of the next vertices that need to be visited, which are the vertices adjacent
+ to the current vertex being visited. So the start vertex will be added to the Queue first. Then a while
+ loop is run as long as the Queue is not empty, which will loop through all the adjacent vertices. Within
+ the while loop, a variable (current) of type Vertex is created to store the current vertex being visited
+ which is removed from the queue. Then there is a sanity check to check if the current vertex being
+ visited is equal to the end vertex. If it is equal to the end vertex, then it simply returns true as
+ there is a path between the start vertex and the end vertex. Otherwise, a for loop is run which loops
+ through the current vertex's edges to get the neighbour vertex's connected to the current vertex. Within
+ the forloop these is a sanity check to check if the neighbour vertex is the end vertex then it will
+ simply return true. Otherwise the neighbour verticies are run through an if statement which checks if it
+ has a charging station and has not yet been visited. If the vertex has a charing station and has not yet
+ been visited then it will be added to the queue and is marked as visited by adding it to the visited
+ Hashset. The current vertex will also be added to the hashset meaning that it has been visited. The
+ process is then recursively run which will go through the whole graph until the end/target vertex has
+ been found meaning there is a path from the start vertex to the end vertex which has intermidate charging
+ stations. If a certain path does not have charging stations to its destination then it will simply return
+ false. 
+
+HashSets are great as they have O(1) lookup and O(1) insersion time.
+Queue has a time complexity of O(1) as it is being used to track the next verticies to be visited and so
+ does the isEmpty() method which has a time complexity of O(1).
+The space complexity is O(V) as there needs to be some kind of structure needed to store all the verticies
+ that have been visited. Therefore in the worst case all the verticies get visited there for all of them
+ need to be stored.
+The overall time complexity is O(V + E) as in the worst case every edge and every vertex needs to be
+ traversed at least once. The worst case time complexity is likely to occur if the end vertex specified is
+ at the complete end of the graph. Or an assumption would be if the vertex does not exist in the graph at
+ all then all edges and vertex's will be visited in order to find a target vertex that does not exist. 
+
+
+
+
+
+
+
